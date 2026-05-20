@@ -1,58 +1,22 @@
-//Conceitos e Representação
-
-/*
-
-Alocação e desalocação dinâmica de memória 
-(malloc, calloc e free)
-
-*/
-
-//bibliotecas
+/* Exemplo: alocação dinâmica de memória
+ * Mostra uso correto de malloc e free e aponta cuidados básicos.
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-//funcao malloc
-// int*vetor = (int*)malloc(5*sizeof(int));
+int main(void) {
+	int *a = malloc(sizeof(int)); // aloca memória para um int
+	if (a == NULL) {
+		fprintf(stderr, "Falha na alocação\n");
+		return 1;
+	}
+	*a = 20;
+	printf("Valor em *a: %d\n", *a);
+	free(a); // libera a memória alocada
 
-//funcao calloc
-// int*vetor = (int*)calloc(5, sizeof(int));
+	int b = 10;
+	a = &b; // agora aponta para variável local (não liberar)
 
-//funcao free
-// free(vetor);
-
-
-/* com erro
-
-int main()
-{
-
-int *a, b;
-b = 10;
-a=(int*) malloc(sizeof(int)); // pedido de memoria
-*a = 20;
-a = &b; 
-free(a);
-
-return 0;
-
-}
-
-*/
-
-//sem erro
-
-int main()
-{
-
-int *a;
-int b;
-a = malloc(sizeof(int)); // pedido de memoria
-a=(int*) malloc(sizeof(int)); // pedido de memoria
-*a = 20;
-free(a);
-a = &b; 
-
-return 0;
-
+	return 0;
 }

@@ -1,13 +1,17 @@
 #include <stdio.h>
 
+/* Exemplo: passagem por referência (via ponteiro)
+ * A função recebe um ponteiro e modifica o conteúdo referenciado.
+ */
 void dobrar(int* x) {
-    *x = (*x) * 2;
+    if (x != NULL) {
+        *x = (*x) * 2;
     }
+}
 
-    int main() {
-        int numero = 5;
-            dobrar(&numero);
-                printf("Número dobrado: %d
-                ", numero);
-                    return 0;
-                    } 
+int main(void) {
+    int numero = 5;
+    dobrar(&numero);
+    printf("Número dobrado: %d\n", numero);
+    return 0;
+}

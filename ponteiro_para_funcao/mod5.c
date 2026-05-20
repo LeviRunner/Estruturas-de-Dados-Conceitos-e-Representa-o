@@ -1,19 +1,19 @@
-//biblioteca
 #include <stdio.h>
 
-//funcao void
-
-void saudacao() {
-        printf("Oi\n")
+/* Exemplo: ponteiro para função
+ * - mostra como declarar e usar um ponteiro para função
+ * - ponteiro aponta para função que retorna void e não recebe parâmetros
+ */
+void saudacao(void) {
+    printf("Oi\n");
 }
 
-int main(){
+int main(void) {
+    /* Declaração de um ponteiro para função:
+       void (*ptr)(void) - aponta para função que retorna void e não recebe args */
+    void (*ptr)(void) = saudacao;
 
-    //declarando um ponteiro 'ptr' para uma funcao
-    //que nao retorna nada (void) e nao tem parametros ().
-    void (*ptr)() = saudacao;
-    
-    //chamando a funcao usando o ponteiro 'ptr'
+    /* Chamada via ponteiro para função */
     ptr();
 
     return 0;
