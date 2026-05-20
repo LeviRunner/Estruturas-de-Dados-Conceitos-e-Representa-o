@@ -81,13 +81,13 @@
             ]
         },
         {
-            "name": "(gdb) Iniciar",
+            "name": "Tetris_nv1 Debug",
             "type": "cppdbg",
             "request": "launch",
-            "program": "insira o nome do programa, por exemplo ${workspaceFolder}/a.out",
+            "program": "${workspaceFolder}/Tetris Stack em C/Tetris_nv1",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${fileDirname}",
+            "cwd": "${workspaceFolder}/Tetris Stack em C",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
